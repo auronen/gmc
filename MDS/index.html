@@ -1,0 +1,1581 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>MDS - ModelScript - Gothic Modding Community</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mds-model-animation-script" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Gothic Modding Community" class="md-header__button md-logo" aria-label="Gothic Modding Community" data-md-component="logo">
+      
+  <img src="../img/gmc_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Gothic Modding Community
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MDS - ModelScript
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Gothic Modding Community" class="md-nav__button md-logo" aria-label="Gothic Modding Community" data-md-component="logo">
+      
+  <img src="../img/gmc_logo.png" alt="logo">
+
+    </a>
+    Gothic Modding Community
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          ZenGin (G1/G2)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ZenGin (G1/G2)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          ZenGin (G1/G2)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          General information
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="General information" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          General information
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DirectoryStructure/" class="md-nav__link">
+        Directory structure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_2" type="checkbox" id="__nav_2_1_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_2">
+          VDFS - virtual file system
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="VDFS - virtual file system" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          VDFS - virtual file system
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VDFS/" class="md-nav__link">
+        Virtual file system
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GothicVDFS/" class="md-nav__link">
+        GothicVDFS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../VDFSTool/" class="md-nav__link">
+        VDFS Tool
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ObjectPersistence/" class="md-nav__link">
+        Object persistence
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Animations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Animations" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Animations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Animation/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          MDS - ModelScript
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        MDS - ModelScript
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax-and-keywords" class="md-nav__link">
+    Syntax and keywords
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax and keywords">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ani" class="md-nav__link">
+    ani
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anialias" class="md-nav__link">
+    aniAlias
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aniblend" class="md-nav__link">
+    aniBlend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anisync" class="md-nav__link">
+    aniSync
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anibatch" class="md-nav__link">
+    aniBatch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AniEventBlocks/" class="md-nav__link">
+        EventBlocks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2_4" type="checkbox" id="__nav_2_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2_4">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../StandaloneAni/" class="md-nav__link">
+        Standalone animation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Meshes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Meshes" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Meshes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Meshes/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          Music
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Music" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Music
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Music/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          Sound
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sound" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Sound
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sound/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          Textures
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Textures" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Textures
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Textures/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7">
+          Video
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Video" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Video
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Video/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" type="checkbox" id="__nav_2_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_8">
+          Worlds
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Worlds" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_8">
+          <span class="md-nav__icon md-icon"></span>
+          Worlds
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Worlds/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9" type="checkbox" id="__nav_2_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_9">
+          Daedalus
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Daedalus" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Daedalus
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scripts/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_9_2" type="checkbox" id="__nav_2_9_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_9_2">
+          Classes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Classes" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_9_2">
+          <span class="md-nav__icon md-icon"></span>
+          Classes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c_item/" class="md-nav__link">
+        C_ITEM
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10" type="checkbox" id="__nav_2_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_10">
+          Union plugins
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Union plugins" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_10">
+          <span class="md-nav__icon md-icon"></span>
+          Union plugins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10_1" type="checkbox" id="__nav_2_10_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_10_1">
+          zParserExtender
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="zParserExtender" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_10_1">
+          <span class="md-nav__icon md-icon"></span>
+          zParserExtender
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zParserExtender/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10_1_2" type="checkbox" id="__nav_2_10_1_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_10_1_2">
+          Extensions and Externals
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Extensions and Externals" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_10_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Extensions and Externals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zPE_while/" class="md-nav__link">
+        While loop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zPE_namespaces/" class="md-nav__link">
+        Namespaces
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zPE_events/" class="md-nav__link">
+        Event functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zPE_c_trigger/" class="md-nav__link">
+        C_Trigger class
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zPE_externals/" class="md-nav__link">
+        External functions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_10_1_3" type="checkbox" id="__nav_2_10_1_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_10_1_3">
+          Injection
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Injection" data-md-level="4">
+        <label class="md-nav__title" for="__nav_2_10_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Injection
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zPE_injection/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zPE_META/" class="md-nav__link">
+        META block
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zPE_hooks/" class="md-nav__link">
+        Hooking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zPE_other/" class="md-nav__link">
+        Other features
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Genome (G3/R1)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Genome (G3/R1)" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Genome (G3/R1)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          General information
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="General information" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          General information
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Genome/" class="md-nav__link">
+        Genome engine
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GenomeObjectPersistence/" class="md-nav__link">
+        Object persistence
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax-and-keywords" class="md-nav__link">
+    Syntax and keywords
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntax and keywords">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ani" class="md-nav__link">
+    ani
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anialias" class="md-nav__link">
+    aniAlias
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aniblend" class="md-nav__link">
+    aniBlend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anisync" class="md-nav__link">
+    aniSync
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anibatch" class="md-nav__link">
+    aniBatch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="mds-model-animation-script">MDS - model animation script</h1>
+<p>Model animation script is a file, that describes what skeleton is to be used, what body meshes work with this set of animations and how the animations should be named, how fast they run, what animation is supposed to run after the current one is finished and much more.
+These files are located in <code>Gothic\_work\DATA\Anims\</code> directory. </p>
+<p>You will see a lot of long and scary code, but it is actually very simple, lets learn what some of the most important commands mean.</p>
+<div class="admonition hint">
+<p class="admonition-title">Don't forget to use the search</p>
+<p>If you search this file for <code>t_Yes</code>, you will get a example of the first type of animation - "standalone"</p>
+<p>To play the animation in game you use this console command <code>play ani t_yes</code>.</p>
+</div>
+<p><center><iframe width="560" height="315" src="https://www.youtube.com/embed/aOyuGVWDefc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center></p>
+<h2 id="syntax-and-keywords">Syntax and keywords</h2>
+<p>Before we get into the keywords, lets get a quick look at the naming convention, to get a basic idea what is going on.</p>
+<p>The first letter indicates a type of animation (transition - <code>t_</code> - or state - <code>s_</code>).
+Then depending on the animation type we have:</p>
+<p><strong>Transition animation</strong>
+<div class="highlight"><pre><span></span><code>t_Run_2_Sneak
+</code></pre></div>
+Transition animation from the run animation to the sneak animation.
+<div class="highlight"><pre><span></span><code>t_BSANVIL_Stand_2_S0
+</code></pre></div>
+Transition animation for the blacksmith's anvil from standing to state 0.</p>
+<p><strong>State animation</strong>
+<div class="highlight"><pre><span></span><code>s_Run
+</code></pre></div>
+State animation for the looping animation.
+<div class="highlight"><pre><span></span><code>s_BSANVIL_S0
+</code></pre></div>
+State animation for the blacksmith's anvil and its first state.</p>
+<h3 id="ani"><code>ani</code></h3>
+<p>This is the main command you will be using while defining new animations.</p>
+<p>Example:
+<div class="highlight"><pre><span></span><code><span class="n">ani</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;t_Yes&quot;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="mf">0.1</span><span class="w"> </span><span class="mf">0.1</span><span class="w"> </span><span class="n">M</span><span class="p">.</span><span class="w"> </span><span class="s">&quot;Hum_Yes_M01.asc&quot;</span><span class="w"> </span><span class="n">F</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">44</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+Syntax:
+<div class="highlight"><pre><span></span><code><span class="n">ani</span><span class="w"> </span><span class="p">(</span><span class="n">ANI_NAME</span><span class="w"> </span><span class="n">LAYER</span><span class="w"> </span><span class="n">NEXT_ANI</span><span class="w"> </span><span class="n">BLEND_IN</span><span class="w"> </span><span class="n">BLEND_OUT</span><span class="w"> </span><span class="n">FLAGS</span><span class="w"> </span><span class="n">ASC_NAME</span><span class="w"> </span><span class="n">ANI_DIR</span><span class="w"> </span><span class="n">START_FRAME</span><span class="w"> </span><span class="n">END_FRAME</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<code>ani</code> - is a keyword, we are defining new animation</p>
+<p>Let's describe all of the parameters</p>
+<p><code>ANI_NAME</code>    - animation name, we use it in Daedalus as animation identifier</p>
+<p>There is a naming convention, that is recommended (and sometimes required) to be used.</p>
+<ul>
+<li>prefix <code>t_</code> - transition animations</li>
+<li>prefix <code>s_</code> - state animations - they usually run in a loop</li>
+<li>prefix <code>c_</code> - animations used for animation combining/interpolation</li>
+</ul>
+<p><code>LAYER</code>       - layer number for multi-layer animations</p>
+<p><code>NEXT_ANI</code>    - name of the next animations</p>
+<p><code>BLEND_IN</code>    - time in seconds describing animation blending at the start</p>
+<p>If we set it to 0.5, it takes 0.5 seconds for this animation to take full effect. At 0.0 s the previous animation has full effect on the bones of the skeleton, at 0.1 s it is influenced by 20% by this animation and at 0.5s it is completely influenced by this animation and the previous one has no effect.</p>
+<p><code>BLEND_OUT</code>   - time in seconds describing animation blending at the end</p>
+<p><code>FLAGS</code>       - flags, that describe animation behavior</p>
+<ul>
+<li><strong>M</strong> - specifies a movement animation, the animation of the model translates into a changed position in the game world</li>
+<li><strong>R</strong> - the same as M but for rotation</li>
+<li><strong>E</strong> - this flag makes this animation run only, if the animation in the same layer are finished, this is used in the movement animations. The animation <code>s_walk</code> (walking loop animation) runs, when the player is walking,when he stops the transition animation to standing state is played <code>t_walk_2_stand</code>. This animation uses the E flag to wait for the walk cycle animation to finish, to smoothly transition into the standing state.</li>
+<li><strong>F</strong> - the engine ignores height coordinate - doesn't keep the model "glued" to the ground (falling/flying animation)</li>
+<li><strong>I</strong> - specifies idle animation - breathing, standing with a drawn weapon and moving the weapon...  </li>
+</ul>
+<p><code>ASC_NAME</code>    - name of the source file exported from Blender</p>
+<p><code>ANI_DIR</code>     - direction of the animation</p>
+<ul>
+<li><strong>F</strong> - forward</li>
+<li><strong>R</strong> - reverse</li>
+</ul>
+<p><code>START_FRAME</code> - on what frame from the source file the animation starts</p>
+<p><code>END_FRAME</code>   - on what frame from the source file the animation ends</p>
+<h3 id="anialias">aniAlias</h3>
+<p>This is probably the second most useful command, it is used to do, what its name suggests it does, and that is creating a alias (similar to hard link for my fellow unix users) for already defined animations.</p>
+<p>Example:
+<div class="highlight"><pre><span></span><code><span class="n">aniAlias</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;t_Sneak_2_Run&quot;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="s">&quot;s_Run&quot;</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="mf">0.1</span><span class="w"> </span><span class="n">M</span><span class="p">.</span><span class="w"> </span><span class="s">&quot;t_Run_2_Sneak&quot;</span><span class="w"> </span><span class="n">R</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+Syntax:
+<div class="highlight"><pre><span></span><code><span class="n">aniAlias</span><span class="w"> </span><span class="p">(</span><span class="n">ANI_NAME</span><span class="w"> </span><span class="n">LAYER</span><span class="w"> </span><span class="n">NEXT_ANI</span><span class="w"> </span><span class="n">BLEND_IN</span><span class="w"> </span><span class="n">BLEND_OUT</span><span class="w"> </span><span class="n">FLAGS</span><span class="w"> </span><span class="n">ALIAS_NAME</span><span class="w"> </span><span class="n">ANI_DIR</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></p>
+<p><code>ANI_NAME</code>   - name of the new animation</p>
+<p><code>LAYER</code>      - layer the animation is on</p>
+<p><code>NEXT_ANI</code>   - name of the next animations</p>
+<p><code>BLEND_IN</code>   - time in seconds describing animation blending at the start</p>
+<p><code>BLEND_OUT</code>  - time in seconds describing animation blending at the end</p>
+<p><code>FLAGS</code>      - flags, that describe animation behaviour</p>
+<p><code>ALIAS_NAME</code> - name of the animation we want to use as a source for the alias</p>
+<p><code>ANI_DIR</code>    - direction of the animation</p>
+<p>If we look for the animation in the example we can see, that there is a related one just one line above
+<div class="highlight"><pre><span></span><code><span class="n">ani</span><span class="w">         </span><span class="p">(</span><span class="s">&quot;t_Run_2_Sneak&quot;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="s">&quot;s_Sneak&quot;</span><span class="w"> </span><span class="mf">0.1</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="n">M</span><span class="p">.</span><span class="w"> </span><span class="s">&quot;Hum_Sneak_M01.asc&quot;</span><span class="w">  </span><span class="n">F</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"></span>
+<span class="n">aniAlias</span><span class="w">    </span><span class="p">(</span><span class="s">&quot;t_Sneak_2_Run&quot;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="s">&quot;s_Run&quot;</span><span class="w">   </span><span class="mf">0.0</span><span class="w"> </span><span class="mf">0.1</span><span class="w"> </span><span class="n">M</span><span class="p">.</span><span class="w"> </span><span class="s">&quot;t_Run_2_Sneak&quot;</span><span class="w">      </span><span class="n">R</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+In this example we are defining <code>t_Sneak_2_Run</code> animation, we specify, that the animation after this one is finished will be <code>s_Run</code> and that it is being made by reversing animation <code>t_Run_2_Sneak</code> by specifying the <code>R</code> flag.</p>
+<h3 id="aniblend">aniBlend</h3>
+<p>AniBlend is used to define animations that are a result of blending of two animations. This animation is not animated by hand, but it is dynamically generated by the engine during run-time.</p>
+<p>Example
+<div class="highlight"><pre><span></span><code><span class="n">aniBlend</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;t_RunR_2_Run&quot;</span><span class="w"> </span><span class="s">&quot;s_Run&quot;</span><span class="w"> </span><span class="mf">0.2</span><span class="w"> </span><span class="mf">0.2</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+Syntax:
+<div class="highlight"><pre><span></span><code><span class="n">aniBlend</span><span class="w"> </span><span class="p">(</span><span class="n">ANI_NAME</span><span class="w"> </span><span class="n">NEXT_ANI</span><span class="w"> </span><span class="n">BLEND_IN</span><span class="w"> </span><span class="n">BLEND_OUT</span><span class="p">)</span><span class="w"></span>
+</code></pre></div></p>
+<p><code>ANI_NAME</code>   - name of the new animation</p>
+<p><code>NEXT_ANI</code>   - name of the next animations</p>
+<p><code>BLEND_IN</code>   - time in seconds describing animation blending at the start</p>
+<p><code>BLEND_OUT</code>  - time in seconds describing animation blending at the end</p>
+<h3 id="anisync">aniSync</h3>
+<p>TODO: I think this one is not used.</p>
+<h3 id="anibatch">aniBatch</h3>
+<p>Not tested in engine - probably doesn't work well, isn't used in any of the games. Probably not wise to use it.</p>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../Animation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Overview
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../AniEventBlocks/" class="md-footer__link md-footer__link--next" aria-label="Next: EventBlocks" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              EventBlocks
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections"], "search": "../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
